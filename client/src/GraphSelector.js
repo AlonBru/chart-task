@@ -8,14 +8,13 @@ function GraphSelector({
 }) {
   return (
     <div className="graph-selector" id={index}>
-      <select onChange={({target:{value}}) => {
+      <select value={current.place} onChange={({target:{value}}) => {
           setGraph({place:value,color:current.color},index)
           }
         }>
         {places.map(place => (
           <option 
           key={place}
-          selected={place===current.place}
           value={place}>
             {place}
           </option>
